@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lab 1</title>
+    <style>
+        body {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>IT-2320 - Lab 1: Language Constructs</h1>
+    <h2>Student Name: <span id="name"></span></h2>
+    <p>Output: <div id="output"></div></p>
+    <p>Values: <br><div id="values"></div></p>
+    <p>Sum: <div id="sum"></div></p>
+
+    <script>
+        /*
+        Author = DeAundra Maddox
+        Class = IT-2320
+        */
+
+        let name = "DeAundra Maddox"; 
+        document.getElementById("name").innerText = name; 
+        document.writeln("Lab 1. Completed by " + name);
+        console.log("Note: Lab 1. Completed by " + name);
+        
+        // Output the value "innerHTML value set" in div with id="output"
+        document.getElementById("output").innerHTML = "innerHTML value set";
+
+        // Add a for loop that outputs all values from 1-10
+        let valuesOutput = "";
+        for (let i = 1; i <= 10; i++) {
+            valuesOutput += i + "<br>"; // Concatenate values with <br>
+        }
+        document.getElementById("values").innerHTML = valuesOutput; 
+
+        // Add a while loop that adds all values from 1-10 together
+        let sum = 0;
+        let j = 1;
+        while (j <= 10) {
+            sum += j;
+            j++;
+        }
+        document.getElementById("sum").innerHTML = "Sum of values from 1 to 10 is: " + sum;
+
+        // Create 3 numeric variables a, b, and c
+        let a = 5; // given value to a
+        let b = 10; // given value to b
+        let c = 15; // given value to c
+
+        // Output their sum using document.writeln()
+        document.writeln("<br>The sum of a, b, and c is: " + (a + b + c));
+
+        // Compare variables a and b
+        if (a < b) {
+            document.writeln("<br>a < b");
+        } else {
+            document.writeln("<br>a > b");
+        }
+    </script>
+</body>
+</html>
+
+
