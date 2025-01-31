@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Lab 2</title>
+<style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;}</style>
+<script>
+// Add functions here
+function helloWorld() {
+  document.writeln('hello, world!');
+}
+
+// 1. Adding add function
+function add(a, b) {
+      return a + b;
+}
+
+// 2. Adding subtract function
+function subtract(a, b) {
+      return a - b;
+ }
+
+// 3. Adding sum function
+function sum() {
+      let total = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+  }
+            return total;
+  }
+
+// 4. Adding setTitle function
+function setTitle() {
+      document.getElementById("title").innerText = "Hello, this is Lab 2!";
+  }
+
+// 5. Adding studentName function
+function studentName(name) {
+      document.getElementById("student").innerText = name;
+  }
+
+// 6. Variable to keep track of seconds since load
+let secondsSinceLoad = 0;
+
+ // 7. Arrow function to update seconds
+  const updateSeconds = () => {
+      secondsSinceLoad += 1;
+      document.getElementById("seconds").innerText = secondsSinceLoad;
+  };
+
+ // Set the title and student name on page load
+    window.onload = function() {
+        setTitle();
+        studentName("DeAundra Maddox"); 
+        setInterval(updateSeconds, 1000); // Update seconds every second
+        };
+
+
+// This is a function that is called when the body has finished loading. 
+// Put any functions that are called on page load into this single function.
+document.addEventListener("DOMContentLoaded", function() {
+  // put your function calls here
+ 
+});
+</script>
+</head>
+
+<body>
+  <h1 id="title">Title</h1>
+  <h2 id="student">Student Name</h2>
+  Seconds since page loaded: <div id="seconds"></div>
+
+  <script>
+    // Any calls using document.writeln() here
+
+    
+// 1. Call and output the result from add(10, 15)
+  document.writeln("Add: " + add(10, 15) + "<br>");
+
+//  2. Call and output the result from subtract(45, 10)
+  document.writeln("Subtract: " + subtract(45, 10) + "<br>");
+
+//  3. Call and output the result from sum(5, 10, 20, 30)
+  document.writeln("Sum: " + sum(5, 10, 20, 30) + "<br>");
+  </script>
+</body>
