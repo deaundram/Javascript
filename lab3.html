@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lab 3</title>
+  <style>
+    * { font-family: Roboto, Helvetica, Arial, sans-serif; }
+    body { padding: 10px; }
+    p { padding-bottom: 20px; }
+    b { display: block; }
+  </style>
+</head>
+<body>
+  <h1>IT-2320 - Lab 3: Strings, Numbers, Dates, Arrays</h1>
+  <h2>Student Name: DeAundra Maddox</h2>
+  
+  <p>
+    <b>1. Create a variable with the value 'JavaScript is awesome!'. Output the length of the string using the length property.</b><br>
+    <script>
+      var jsawesome = 'JavaScript is awesome!';
+      document.writeln('length = ' + jsawesome.length);
+    </script>
+  </p>
+
+  <p>
+    <b>2. Create a variable called phone and assign the value 888-123-1234. Using the substring() function, output the area code (the 1st 3 characters).</b><br>
+    <script>
+      var phone = '888-123-1234';
+      document.writeln('Area Code = ' + phone.substring(0, 3));
+    </script>
+  </p>
+
+  <p>
+    <b>3. Use the substr() function to return the phone number without the area code.</b><br>
+    <script>
+      document.writeln('Phone without area code = ' + phone.substr(4));
+    </script>
+  </p>
+
+  <p>
+    <b>4. Create a variable called sentence with the text 'I love flavor ice cream!'. Replace 'flavor' with your favorite flavor.</b><br>
+    <script>
+      var favoriteFlavor = 'chocolate';
+      var sentence = 'I love flavor ice cream!';
+      document.writeln('Updated Sentence = ' + sentence.replace('flavor', favoriteFlavor));
+    </script>
+  </p>
+
+  <p>
+    <b>5. Create variables for addr, city, state, and zip. Output the address in uppercase.</b><br>
+    <script>
+      var addr = '123 Main St';
+      var city = 'Cleveland';
+      var state = 'Oh';
+      var zip = '44115';
+      document.writeln('Address:\n' + addr.toUpperCase() + '\n' + city.toUpperCase() + ', ' + state.toUpperCase() + ' ' + zip.toUpperCase());
+    </script>
+  </p>
+
+  <p>
+    <b>6. Create a variable called helpdesk and assign 'HelpDesk@Tri-C.edu'. Convert it to lowercase.</b><br>
+    <script>
+      var helpdesk = 'HelpDesk@Tri-C.edu';
+      document.writeln('Helpdesk Email = ' + helpdesk.toLowerCase());
+    </script>
+  </p>
+
+  <p>
+    <b>7. Create a variable called id with value '007' and use padStart().</b><br>
+    <script>
+      var id = '007';
+      document.writeln('Padded ID = ' + id.padStart(9, '0'));
+    </script>
+  </p>
+
+  <p>
+    <b>8. Create variables for firstName and lastName and use template literals.</b><br>
+    <script>
+      var firstName = 'DeAundra'; 
+      var lastName = 'Maddox'; 
+      document.writeln(`Hello ${firstName} ${lastName}!`);
+    </script>
+  </p>
+
+  <p>
+    <b>9. Create a variable called joke with a multiline string using back-tics.</b><br>
+    <script>
+      var joke = `Why don't programmers like nature?
+      It has too many bugs.`;
+      document.writeln('Joke: ' + joke);
+    </script>
+  </p>
+
+  <p>
+    <b>10. Write an expression that returns true from a call to isNaN().</b><br>
+    <script>
+      var result = isNaN('Hello');
+      document.writeln('isNaN("Hello") = ' + result);
+    </script>
+  </p>
+
+  <p>
+    <b>11. Use toFixed to format the result of 20 + 10 / 3 as currency.</b><br>
+    <script>
+      var currency = (20 + 10 / 3).toFixed(2);
+      document.writeln('Formatted Currency = $' + currency);
+    </script>
+  </p>
+
+  <p>
+    <b>12. Use parseInt() to output the whole number value for 10.335.</b><br>
+    <script>
+      var wholeNumber = parseInt(10.335);
+      document.writeln('Whole Number = ' + wholeNumber);
+    </script>
+  </p>
+
+  <p>
+    <b>13. Check if 20.5 is an integer.</b><br>
+    <script>
+      var isInteger = Number.isInteger(20.5);
+      document.writeln('Is 20.5 an integer? ' + isInteger);
+    </script>
+  </p>
+
+  <p>
+    <b>14. Create a Date object called d and assign the current date and time.</b><br>
+    <script>
+      var d = new Date();
+      document.writeln('Current Date and Time: ' + d);
+    </script>
+  </p>
+
+  <p>
+    <b>15. Subtract 1 year from d.</b><br>
+    <script>
+      d.setFullYear(d.getFullYear() - 1);
+      document.writeln('Date minus 1 year: ' + d);
+    </script>
+  </p>
+
+  <p>
+    <b>16. Output the toUTCString() value of d.</b><br>
+    <script>
+      document.writeln('UTC String: ' + d.toUTCString());
+    </script>
+  </p>
+
+  <p>
+    <b>17. Output only the year from d.</b><br>
+    <script>
+      document.writeln('Year: ' + d.getFullYear());
+    </script>
+  </p>
+
+  <p>
+    <b>18. Create an array called supplies and use forEach to output the values.</b><br>
+    <script>
+      var supplies = ['Books', 'Notebooks', 'Pens', 'Pencils', 'Eraser', 'Bookbag'];
+      supplies.forEach(function(item) {
+        document.writeln('Supply: ' + item);
+      });
+    </script>
+  </p>
+
+  <p>
+    <b>19. Sort the supplies array and output it.</b><br>
+    <script>
+      supplies.sort();
+      document.writeln('Sorted Supplies: ' + supplies.join(', '));
+    </script>
+  </p>
+
+</body>
+</html>
