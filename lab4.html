@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+</head>
+<body>
+
+<script>
+// 1. create a class called Student
+class Student {
+    constructor(name, major, gpa, classesTaken) {
+        this.name = name;
+        this.major = major;
+        this.gpa = gpa;
+        this.classesTaken = classesTaken;
+    }
+
+    displayProperties() {
+        document.writeln('Name: ' + this.name + '<br>');
+        document.writeln('Major: ' + this.major + '<br>');
+        document.writeln('GPA: ' + this.gpa + '<br>');
+        document.writeln('Classes Taken: ' + this.classesTaken.join(', ') + '<br>');
+    }
+}
+
+// creating a Student object
+let student = new Student("DeAundra Maddox", " IT Programming and Development", 3.2, ["IT-1025", "IT-2310", "IT-1050", "IT-2351", "IT-2700", "IT 2650", "IT-2320"]);
+student.displayProperties();
+document.writeln('<hr>');
+
+// 2. create an object called course
+let course = {
+    courseId: "IT-2320",
+    title: "IT-2320",
+    crsDesc: "Interactive Internet Programming",
+    creditHrs: "4",
+    displayCourse: function() {
+        for (const [key, value] of Object.entries(this)) {
+            if (typeof value !== 'function') {
+                document.writeln(key + ": " + value + '<br>');
+            }
+        }
+    }
+};
+
+course.displayCourse();
+document.writeln('<hr>');
+
+// 3. Create an object called planet
+let planet = {
+    name: "Mercury",
+    diameterMiles: 3031.9
+};
+planet.millMilesFromEarth = 48;
+
+document.writeln('Planet Name: ' + planet.name + '<br>');
+document.writeln('Diameter in Miles: ' + planet.diameterMiles + '<br>');
+document.writeln('Miles from Earth: ' + planet.millMilesFromEarth + '<br>');
+document.writeln('<hr>');
+
+// 4. create a set called favoriteLanguages
+let favoriteLanguages = new Set(["JavaScript", "Python", "Swift", "Dart"])
+
+for (let language of favoriteLanguages) {
+    console.log(language);
+}
+
+// 5. create a map called creditHrs
+let creditHrs = new Map([
+    ["IT-1025", 3],
+    ["IT-1050", 3],
+    ["IT-2310", 3],
+    ["IT-2320", 4],
+    ["IT-2030", 4],
+    ["IT-2351", 4],
+    ["IT-2650", 4]
+]);
+
+// using get() to find the credit hours for IT-2030
+document.writeln('Credit Hours for IT-2030: ' + creditHrs.get("IT-2030") + '<br>');
+
+// using a loop to output all values
+document.writeln('All Course Credit Hours:<br>');
+for (const [courseId, hours] of creditHrs) {
+    document.writeln(courseId + ": " + hours + '<br>');
+}
+
+</script>
+</body>
+</html>
+
+
