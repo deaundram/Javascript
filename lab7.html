@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lab 7 - JSON</title>
+</head>
+
+<body>
+    <h1>Lab 7 - JSON</h1>
+    <h2>Student Name: DeAundra Maddox</h2>
+
+    <p>
+        <b>Step 1</b>
+        <blockquote>
+            <script>
+                // Given a JSON string, parse it
+                const courseObj = JSON.parse('{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming"}');
+                // Output the title
+                document.writeln(courseObj.title); // Output: Interactive Internet Programming
+            </script>
+        </blockquote>
+    </p>
+
+    <p>
+        <b>Step 2</b>
+        <blockquote>
+            <script>
+                // Given a JSON string representing an array
+                const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';
+                // Parse it to a JavaScript array
+                const array = JSON.parse(text);
+                // Output each value in the array
+                array.forEach(item => {
+                    document.writeln(item + "<br>"); // Output: Document Object Model, Language Constructs, OOP, Fetch API, JSON
+                });
+            </script>
+        </blockquote>
+    </p>
+
+    <p>
+        <b>Step 3</b>
+        <blockquote>
+            <script>
+                // Given a JSON string for an object
+                const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';
+                // Parse it to an object
+                const courseDetails = JSON.parse(myJSON);
+                // Modify the description
+                courseDetails.description = "An Introduction to JavaScript";
+                // Output all values
+                document.writeln(`ID: ${courseDetails.id}, Credits: ${courseDetails.credits}, Title: ${courseDetails.title}, Description: ${courseDetails.description}`);
+                // Output: ID: IT-2320, Credits: 4, Title: Interactive Internet Programming, Description: An Introduction to JavaScript
+            </script>
+        </blockquote>
+    </p>
+
+    <p>
+        <b>Step 4</b>
+        <blockquote>
+            <script>
+                // Create an array and JSON string
+                const courseArray = ['IT-1025', 'IT-2310', 'IT-2320'];
+                const courseJSON = JSON.stringify(courseArray); // Convert array to JSON string
+                // Output all values in the array
+                document.writeln("Array Values:<br>" + courseArray.join("<br>") + "<br><br>");
+                document.writeln("JSON String:<br>" + courseJSON + "<br>");
+                // Output: Array Values: IT-1025, IT-2310, IT-2320 (each on a new line)
+                // Output: JSON String: ["IT-1025","IT-2310","IT-2320"]
+            </script>
+        </blockquote>
+    </p>
+
+    <p>
+        <b>Step 5</b>
+        <blockquote>
+            <script>
+                // Fetch values from courses.txt
+                fetch('courses.txt') // Ensure 'courses.txt' is in the same folder
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(course => {
+                            document.writeln(course + "<br>"); // Output each course from the array
+                        });
+                        // Expected Output: IT-1025, IT-2310, IT-2320 (each on a new line)
+                    });
+            </script>
+        </blockquote>
+    </p>
+
+    <p>
+        <b>Step 6</b>
+        <blockquote>
+            <script>
+                // Fetch JSON from it1025.txt
+                fetch('it1025.txt') // Ensure 'it1025.txt' is in the same folder
+                    .then(response => response.json())
+                    .then(data => {
+                        document.writeln("Title from it1025.txt: " + data.title); // Output the title
+                        // Output: Title from it1025.txt: Introduction to Programming
+                    });
+            </script>
+        </blockquote>
+    </p>
+
+</body>
+</html>
