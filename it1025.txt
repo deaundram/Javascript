@@ -1,5 +1,0 @@
-  {
-  "id": "IT-1025",
-  "credithrs": 4,
-  "title": "Introduction to Programming"
-}
